@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./infra/db/Dockerfile
-    image: ganntt-mysql
+    image: animedia-mysql
     ports:
       - "3306:3306"
     environment:
@@ -17,7 +17,7 @@ services:
     build:
       context: ./backend
       dockerfile: ./../infra/rails/Dockerfile
-    image: ganntt-rails
+    image: rails-ani
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 8000 -b '0.0.0.0'"
     volumes:
       - ./backend/:/backend
@@ -31,7 +31,7 @@ services:
     build:
       context: ./frontend
       dockerfile: ./../infra/nuxt/Dockerfile
-    image: ganntt-nuxt
+    image: nuxt-ani
     ports:
       - "3000:3000"
     command: yarn dev
