@@ -29,8 +29,6 @@ services:
       - db
     stdin_open: true
     tty: true
-    environment:
-      RAILS_ANI_DATABASE_PASSWORD: sV6Wkq2N
   web:
     build:
       context: ./frontend
